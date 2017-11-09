@@ -28,3 +28,4 @@ urlpatterns = [ url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [url(r'^accounts/',include('django.contrib.auth.urls')),]
+
