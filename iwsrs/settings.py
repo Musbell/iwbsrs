@@ -29,7 +29,7 @@ DEBUG = False
 
 INSTALLED_APPS = [# Third-party apps
     "django_bootstrap_breadcrumbs",'report_builder','crispy_forms','admin_interface','flat_responsive','colorfield',
-    'pwa',
+    'pwa','storages',
 
     ########################
     'django.contrib.admin','django.contrib.auth','django.contrib.contenttypes','django.contrib.sessions',
@@ -141,3 +141,5 @@ PWA_APP_THEME_COLOR = '#0A0302'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [{'src': '/static/assets/img/favicon.ico','sizes': '160x160'}]
+
+#07035226032

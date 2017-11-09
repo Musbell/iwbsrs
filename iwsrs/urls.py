@@ -29,3 +29,5 @@ urlpatterns = [ url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
 urlpatterns += [url(r'^accounts/',include('django.contrib.auth.urls')),]
 
+
+
