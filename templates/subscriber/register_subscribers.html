@@ -1,0 +1,32 @@
+{% extends 'base_generic.html' %}
+
+
+{% block content %}
+
+    <div class="container-fluid" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-lg-2">
+
+            </div>
+            <div id='myAffix' class="col-lg-2" style="border-right: 1px solid rgb(238, 238, 238);">
+                <div class="list-group">
+                    <a href="#" class="list-group-item disabled" style="border: none;">
+                        Subscriber registration
+                    </a>
+                     <a href="{% url 'subscriber:capture_image' %}" class="list-group-item" style="border: none">Capture image</a>
+                    <a href="{% url 'subscriber:add_subscriber' %}" class="list-group-item" style="border: none;">Bio data</a>
+                    <a href="{% url 'subscriber:add_subscriber_next_of_kin' %}" class="list-group-item" style="border: none">Next of kin</a>
+                    <a href="javascript:login()" class="list-group-item" style="border: none">Register sim</a>
+                     <button class="btn btn-info btn-lg"><a href="{% url 'subscriber:mobile_subscribers'%}" style="text-decoration: none; color: white">See all subscribers</a></button>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="container">
+                    {% block subscriber_form %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

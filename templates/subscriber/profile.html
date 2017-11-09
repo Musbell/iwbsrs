@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    {% include 'head.html' %}
+</head>
+
+<body class="profile-page">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=364692283577192";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% if user.is_authenticated %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-toggleable-md bg-white fixed-top navbar-transparent " color-on-scroll="500">
+        <div class="container">
+            <div class="dropdown button-dropdown">
+                <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                    <span class="button-bar"></span>
+                    <span class="button-bar"></span>
+                    <span class="button-bar"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-header">Dropdown header</a>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">One more separated link</a>
+                </div>
+            </div>
+            <div class="navbar-translate">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                    IWBSRS
+                </a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+                <ul class="navbar-nav">
+                    {% if not user.role == "SUBSCRIBER" %}
+                        {% if user.role == "MOBILE NETWORK OPERATOR" %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'subscriber:registered_subscribers' %}">Go to admin page</a>
+                        </li>
+                            {% else %}
+                             <li class="nav-item">
+                            <a class="nav-link" href="{% url 'subscriber:mobile_subscribers' %}">Go to admin page</a>
+                        </li>
+                            {% endif %}
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://consumer.ncc.gov.ng/">Have an issue?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                            <p class="hidden-lg-up">Twitter</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="hidden-lg-up">Facebook</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                            <p class="hidden-lg-up">Instagram</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="wrapper">
+        <div class="page-header page-header-small" filter-color="#004479">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('{% static 'assets/img/globalfoundries-on-track-to-deliver-leading-performance-7nm-finfet-technology.jpg' %}');">
+            </div>
+            <div class="container">
+                <div class="content-center">
+                    <div class="photo-container">
+                        <img src="http://localhost:8000/media/{{ user.image }}" alt="" class="rounded-circle" style="width: 160px;">
+                    </div>
+                    <h3 class="title">{{ user.first_name }} {{ user.last_name }}</h3>
+                    <p class="category">{{ user.username }}</p>
+                    <div class="content">
+                        <div class="social-description">
+                            <h2>State</h2>
+                            <p>{{ user.state_of_origin }}</p>
+                        </div>
+                        <div class="social-description">
+                            <h2>Work</h2>
+                            <p>{{ user.occupation }}</p>
+                        </div>
+                        <div class="social-description">
+                            <h2>Emil</h2>
+                            <p>{{ user.email }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="button-container">
+                    <a href="{% url 'subscriber:user_generate_pdf' %}" class="btn btn-info btn-round btn-lg">Print slip</a>
+                    <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="category">Profile detail</p>
+                        <!-- Nav tabs -->
+                        <div class="card" style="box-shadow: none">
+                            <ul class="nav nav-tabs justify-content-center" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+                                        <i class="now-ui-icons objects_umbrella-13"></i> Bio data
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+                                        <i class="now-ui-icons shopping_cart-simple"></i> Next of kin
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                                        <i class="now-ui-icons shopping_shop"></i> Registered sim
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="card-block">
+                                <!-- Tab panes -->
+                                <div class="tab-content text-left text-muted">
+                            <div class="tab-pane active" id="home" role="tabpanel">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">First name:</th>
+                                        <td>{{ user.first_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Last name:</th>
+                                        <td>{{ user.last_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gender:</th>
+                                        <td>{{ user.gender }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Date of birth:</th>
+                                        <td>{{ user.date_of_birth }}</td>
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">State of origin:</th>
+                                        <td>{{ user.state_of_origin }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Occupation:</th>
+                                        <td>{{ user.occupation }}</td>
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">Address:</th>
+                                        <td>{{ user.address }}</td>
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">Local government:</th>
+                                        <td>{{ user.local_government }}</td>
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">Nationality:</th>
+                                        <td>{{ user.nationality }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="tab-pane" id="profile" role="tabpanel">
+                                 <table class="table table-striped table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">First name:</th>
+                                        <td>{{ user.nextofkin.first_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Last name:</th>
+                                        <td>{{ user.nextofkin.last_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gender:</th>
+                                        <td>{{ user.nextofkin.gender }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Relationship:</th>
+                                        <td>{{ user.nextofkin.relationship }}</td>
+                                    </tr>
+                                     <tr>
+                                        <th scope="row">Address:</th>
+                                        <td>{{ user.nextofkin.address }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone number:</th>
+                                        <td>{{ user.nextofkin.phone_number }}</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="tab-pane" id="messages" role="tabpanel">
+                                     <table class="table table-striped table-hover">
+                                    <tbody>
+                                    {% for sim in user.registeredsims_set.all%}
+                                        <tr>
+                                        <td>{{ sim.phone_number }}</td>
+                                        <td>{{ sim.mobile_network }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="fb-page" data-href="https://www.facebook.com/nigerian.communications.commission" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/nigerian.communications.commission" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/nigerian.communications.commission">Nigerian Communications Commission</a></blockquote></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <footer class="footer footer-default">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            IWBSRS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://presentation.creative-tim.com">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                            MIT License
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                 Nigerian Communications Commission &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>, All Rights Reserved
+            </div>
+        </div>
+    </footer>
+{% endif %}
+</body>
+{% include 'scripts.html' %}
+
+</html>

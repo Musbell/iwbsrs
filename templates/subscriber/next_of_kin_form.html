@@ -1,0 +1,12 @@
+{% extends 'subscriber/register_subscribers.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+{% block subscriber_form %}
+    <div>
+      <h1><i class="now-ui-icons users_single-02"></i> Add Subscriber Next of kin</h1>
+{% crispy form %}
+    </div>
+{% endblock %}

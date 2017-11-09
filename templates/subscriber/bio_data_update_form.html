@@ -1,0 +1,33 @@
+{% extends 'base_generic.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+{% block content %} %}
+    <div class="container-fluid" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-2" style="border-right: 1px solid rgb(238, 238, 238);">
+                <img src="http://localhost:8000/media/{{ subscriber.image }}" alt="" class="rounded" style="width: 200px;">
+                <div style="margin-left: 5%; margin-top: 10%" class="text-muted">
+                    <h1>{{ subscriber.first_name }} {{ subscriber.last_name }}</h1>
+                    <p><i class="now-ui-icons users_single-02"></i> &ensp; {{ subscriber.username }}</p>
+                    <p><i class="now-ui-icons ui-1_email-85"></i> &ensp; {{ subscriber.email }}</p>
+                    <p><i class="now-ui-icons ui-1_calendar-60"></i> &ensp; {{ subscriber.last_login }}</p>
+                </div>
+                 <a href="{% url 'subscriber:mobile_network_subscriber_detail' subscriber.id %}">
+                     <button class="btn btn-link btn-info"><i class="now-ui-icons arrows-1_minimal-left"></i> Go back to profile</button>
+                </a>
+            </div>
+            <div class="col-lg-8">
+                <div class="container">
+                    <h1><i class="now-ui-icons users_single-02"></i> Update Subscriber Bio Data</h1>
+    {% crispy form %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

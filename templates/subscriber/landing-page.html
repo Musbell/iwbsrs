@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+    {% include 'head.html' %}
+</head>
+
+<body class="landing-page">
+<!-- Navbar -->
+<nav class="navbar navbar-toggleable-md bg-white fixed-top navbar-transparent " color-on-scroll="500">
+    <div class="container">
+        <div class="dropdown button-dropdown">
+            <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-header">Dropdown header</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">One more separated link</a>
+            </div>
+        </div>
+        <div class="navbar-translate">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.ncc.gov.ng" rel="tooltip" title="Nigerians Communications Commission" data-placement="bottom" target="_blank">
+                <img src="{% static 'assets/img/ncc-logo-001.png' %}" alt="logo" style="width: 40%">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'subscriber:login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <p class="hidden-lg-up">Twitter</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                        <p class="hidden-lg-up">Facebook</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                        <p class="hidden-lg-up">Instagram</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Navbar -->
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image" data-parallax="true" style="background-image: url('{% static 'assets/img/globalfoundries-on-track-to-deliver-leading-performance-7nm-finfet-technology.jpg' %}');">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <br/><br/>
+                <h1 class="title">Integrated Web Based Sim Registration System</h1>
+                <div class="text-center">
+                    <a href="#pablo" class="btn btn-info btn-icon  btn-icon-mini">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-info btn-icon btn-icon-mini">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-info btn-icon  btn-icon-mini">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <h2 class="title">Who we are?</h2>
+                    <h5 class="description">The Nigerian Communications Commission is the independent National Regulatory Authority for the telecommunications industry in Nigeria. The Commission is responsible for creating an enabling environment for competition among operators in the industry as well as ensuring the provision of qualitative and efficient telecommunications services throughout the country.
+
+                        Over the years NCC has earned a reputation as a foremost Telecom regulatory agency in Africa. The Commission is hoping to catalyze the use of ICT’S for different aspect of national development. The Commission has initiated several programs such as State Accelerated Broadband Initiative (SABI) and Wire Nigeria Project (WIN) to help stimulate demand and accelerate the uptake of ICT tools and services necessary for the enthronement of a knowledge society in Nigeria.
+
+                        In order to achieve its mandate, the Commission has put in place the necessary licensing and regulatory framework for the supply of telecommunications services.</h5>
+                </div>
+            </div>
+            <div class="separator separator-info"></div>
+            <div class="section-story-overview">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="image-container image-left">
+                            <!-- First image on the left side -->
+                            <img src="{% static 'assets/img/Nigerian-Communications-Commission-NCC.jpg' %}" alt="" class="rounded img-fluid img-raised" style="width: 75%">
+                            <p class="blockquote blockquote-info">"...Information and communications technologies are already benefiting women and girls in numerous ways. E-commerce is expanding opportunities for entrepreneurship...
+                                <br>
+                                <small>-Ban Ki-Moon (www.itu.int)</small>
+                            </p>
+                        </div>
+                        <!-- Second image on the left side of the article -->
+                        <div class="image-container">
+                            <img src="{% static 'assets/img/ncc-building.jpg' %}" alt="" class="img-fluid rounded img-raised">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <!-- First image on the right side, above the article -->
+                        <div class="image-container image-right">
+                            <img src="{% static 'assets/img/Scientists-Encourage-Governments-to-Broadcast-Free-Super-Wifi.jpg' %}" alt="" class="rounded img-fluid img-raised">
+                        </div>
+                        <h3>Our Guiding Principles</h3>
+                        <p>The Commission is driven by three guiding principles (Fair, Firm and Forthright) in carrying out its duties and functions as the National Telecommunications Regulator. These principles drive our Core Values.
+                        </p>
+                        <br>
+                        <h3>Our Mission</h3>
+                        <p>To support a market driven Communications industry and promote universal access.</p>
+                        <br>
+                        <h3>Our Vision</h3>
+                        <p>To be a responsive, world-class Communications Regulatory Organisation.
+                        </p>
+                        <br>
+                        <h3>Overarching Strategic Result</h3>
+                        <p>An Information rich environment, comparable globally in quality Communications service provision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-contact-us text-center">
+        <div class="container">
+            <h2 class="title">Want to contact us?</h2>
+            <div class="alert alert-info" role="alert">
+                    <div class="container">
+                        <div class="alert-icon">
+                            <i class="now-ui-icons travel_info"></i>
+                        </div>
+                        <strong>Notice to Consumers!</strong> If you wish to make a complaint about your service provider, you are kindly requested to visit the NCC Consumer Portal and fill in the Complaint Form.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-lg-6 text-center offset-lg-3 col-md-8 offset-md-2">
+                    <div class="input-group form-group-no-border input-lg">
+                            <span class="input-group-addon">
+                                <i class="now-ui-icons users_circle-08"></i>
+                            </span>
+                        <input type="text" class="form-control" placeholder="First Name...">
+                    </div>
+                    <div class="input-group form-group-no-border input-lg">
+                            <span class="input-group-addon">
+                                <i class="now-ui-icons ui-1_email-85"></i>
+                            </span>
+                        <input type="text" class="form-control" placeholder="Email...">
+                    </div>
+                    <div class="textarea-container">
+                        <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
+                    </div>
+                    <div class="send-button">
+                        <a href="#pablo" class="btn btn-info btn-round btn-block btn-lg">Send Message</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            IWBSRS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://presentation.creative-tim.com">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                            MIT License
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                 Nigerian Communications Commission &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>, All Rights Reserved
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+{% include 'scripts.html' %}
+</html>

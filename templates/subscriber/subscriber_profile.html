@@ -1,0 +1,118 @@
+{% extends 'subscriber/mobile_network_subscriber_detail.html' %}
+
+{% block subscriber_profile %}
+ <div class="card" style="box-shadow: none">
+                    <ul class="nav nav-tabs justify-content-center " role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+                                <i class="now-ui-icons objects_umbrella-13"></i> Bio data
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+                                <i class="now-ui-icons shopping_cart-simple"></i> Next of kin
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                                <i class="now-ui-icons shopping_shop"></i> Registered sim
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="card-block">
+                        <!-- Tab panes -->
+                        <div class="tab-content text-left text-muted">
+                            <div class="tab-pane active" id="home" role="tabpanel">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">First name:</th>
+                                        <td>{{ subscriber.first_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Last name:</th>
+                                        <td>{{ subscriber.last_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gender:</th>
+                                        <td>{{ subscriber.gender }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Date of birth:</th>
+                                        <td>{{ subscriber.date_of_birth }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">State of origin:</th>
+                                        <td>{{ subscriber.state_of_origin }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Occupation:</th>
+                                        <td>{{ subscriber.occupation }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address:</th>
+                                        <td>{{ subscriber.address }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Local government:</th>
+                                        <td>{{ subscriber.local_government }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nationality:</th>
+                                        <td>{{ subscriber.nationality }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <a href="{% url 'subscriber:bio_data_edit' subscriber.id %}"><button class="btn btn-info btn-simple btn-round" type="button">Edit bio data</button></a>
+                            </div>
+                            <div class="tab-pane" id="profile" role="tabpanel">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">First name:</th>
+                                        <td>{{ subscriber.nextofkin.first_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Last name:</th>
+                                        <td>{{ subscriber.nextofkin.last_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gender:</th>
+                                        <td>{{ subscriber.nextofkin.gender }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Relationship:</th>
+                                        <td>{{ subscriber.nextofkin.relationship }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address:</th>
+                                        <td>{{ subscriber.nextofkin.address }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone number:</th>
+                                        <td>{{ subscriber.nextofkin.phone_number }}</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                    <a href="{% url 'subscriber:next_of_kin_edit' subscriber.id %}"><button class="btn btn-info btn-simple btn-round" type="button">Edit next of kin</button></a>
+                            </div>
+                            <div class="tab-pane" id="messages" role="tabpanel">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                    {% for number in subscriber.registeredsims_set.all %}
+                                        <tr>
+                                            <td>{{ number.phone_number }}</td>
+                                            <td>{{ number.mobile_network }}</td>
+                                        <td> <a href="{% url 'sim_reg:reg_sim_edit' number.id %}"><i class="now-ui-icons design-2_ruler-pencil text-success"></i></a></td>
+                                        <td> <a href="{% url 'sim_reg:reg_sim_edit' number.id %}"><i class="now-ui-icons ui-1_simple-remove text-primary"></i></a></td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}

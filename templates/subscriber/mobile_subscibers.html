@@ -1,0 +1,86 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    {% if user.role == 'REGISTRATION AGENT' %}
+        <div class="container-fluid" style="margin-top:3%">
+            <div class="row">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-10">
+                    <h4>Mobile Subscribers</h4>
+                    <hr>
+                    <table id="example" class="uk-table uk-table-hover uk-table-striped" cellspacing="5" width="100%">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Gender</th>
+                            <th>Occupation</th>
+                            <th>State of origin</th>
+                            <th>Registered numbers</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th></th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Gender</th>
+                            <th>Occupation</th>
+                            <th>State of origin</th>
+                            <th>Registered numbers</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {% for subscriber in mobile_subscriber_list %}
+                            <tr>
+                                <td style="width: 40px; padding-right: 50px"><a href="{% url 'subscriber:mobile_network_subscriber_detail' subscriber.id %}">
+                                    <img src="http://localhost:8000/media/{{ subscriber.image }}" alt="" class="rounded-circle" style="width: 100%;"/>
+                                </a></td>
+                                <td>{{ subscriber.first_name }}</td>
+                                <td>{{ subscriber.last_name }}</td>
+                                <td>{{ subscriber.gender }}</td>
+                                <td>{{ subscriber.occupation }}</td>
+                                <td>{{ subscriber.state_of_origin }}</td>
+                                <td>
+                                    {% for sim in subscriber.registeredsims_set.all %}
+                                        <ul>
+                                            <li>{{ sim.phone_number }}</li>
+                                        </ul>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container">
+            <div class="row" style="margin-top:3%">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-8">
+                    <div class="alert alert-warning" role="alert">
+                        <div class="container">
+                            <div class="alert-icon">
+                                <i class="now-ui-icons ui-1_bell-53"></i>
+                            </div>
+                            <strong>Warning!</strong> Sorry you don't have permission to view this page :(
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                            </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

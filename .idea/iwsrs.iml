@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="django" name="Django">
+      <configuration>
+        <option name="rootFolder" value="$MODULE_DIR$" />
+        <option name="settingsModule" value="iwsrs/settings.py" />
+        <option name="manageScript" value="$MODULE_DIR$/manage.py" />
+        <option name="environment" value="&lt;map/&gt;" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="Python 3.5.2 virtualenv at ~/Envs/iwbsrs" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="dataTables.uikit" level="application" />
+    <orderEntry type="library" name="buttons.flash" level="application" />
+    <orderEntry type="library" name="dataTables.responsive" level="application" />
+    <orderEntry type="library" name="dataTables.buttons" level="application" />
+    <orderEntry type="library" name="buttons.html5" level="application" />
+    <orderEntry type="library" name="dataTables.select" level="application" />
+    <orderEntry type="library" name="buttons.print" level="application" />
+    <orderEntry type="library" name="dataTables.keyTable" level="application" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/templates" />
+      </list>
+    </option>
+  </component>
+  <component name="TestRunnerService">
+    <option name="projectConfiguration" value="py.test" />
+    <option name="PROJECT_TEST_RUNNER" value="py.test" />
+  </component>
+</module>
