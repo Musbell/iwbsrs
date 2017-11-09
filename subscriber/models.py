@@ -22,7 +22,7 @@ class Subscriber(AbstractUser):
     nationality = models.CharField(max_length=30)
     # width = models.IntegerField(default=300)
     # height = models.IntegerField(default=300)
-    image = models.FileField(verbose_name='Captured image', width_field='width', height_field='height',)
+    image = models.FileField(verbose_name='Captured image',)
     # image = models.FileField(verbose_name='Captured image')
     role = models.CharField(max_length=30,choices=USER_TYPE,default='SUBSCRIBER')
 
