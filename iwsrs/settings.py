@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import dj_database_url
+# import dropbox
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,13 +24,14 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = "57mbb)@2$okq7lr-$wl2ydl^!5m1304dbmo%k$*19c5(y&6ad5"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Application definition
 
 INSTALLED_APPS = [# Third-party apps
     "django_bootstrap_breadcrumbs",'report_builder','crispy_forms','admin_interface','flat_responsive','colorfield',
-    'pwa','storages',
+    'pwa',
+    # 'storages',
 
     ########################
     'django.contrib.admin','django.contrib.auth','django.contrib.contenttypes','django.contrib.sessions',
@@ -141,5 +143,10 @@ PWA_APP_THEME_COLOR = '#0A0302'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [{'src': '/static/assets/img/favicon.ico','sizes': '160x160'}]
+
+# DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+#
+# DROPBOX_OAUTH2_TOKEN = '7fQ61jR3jOQAAAAAAAAGPVD-v59rhVA1guPfI2n8Tt6IC95unYmGpQJvMOVMOQS_'
+# DROPBOX_ROOT_PATH = 'ISRS'
 
 #07035226032
