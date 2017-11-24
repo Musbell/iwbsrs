@@ -30,7 +30,6 @@ django-storages==1.6.5
 djangorestframework==3.6.3
 dlib==19.4.0
 docutils==0.14
-dropbox==8.4.1
 et-xmlfile==1.0.1
 gunicorn==19.6.0
 h5py==2.7.0
