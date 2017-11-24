@@ -45,8 +45,6 @@ MarkupSafe==1.0
 matplotlib==2.0.2
 numpy==1.13.1
 olefile==0.44
-opencv-contrib-python==3.2.0.8
-opencv-python==3.2.0.8
 openpyxl==2.4.8
 Pillow==4.0.0
 protobuf==3.3.0
@@ -71,7 +69,6 @@ snowballstemmer==1.2.1
 Sphinx==1.6.3
 sphinxcontrib-websupport==1.0.1
 static3==0.7.0
-tensorflow==1.2.1
 tinycss==0.4
 tinycss2==0.5
 urllib3==1.22
