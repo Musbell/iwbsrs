@@ -72,7 +72,7 @@
                 </div>
                 {% if user.role == 'REGISTRATION AGENT'%}
                     <div class="list-group">
-                        <a href="https://demo.kairos.com/recognize/" target="_blank" class="list-group-item" style="background-color: #F7F7F7; border-right: none">Verify image recognition</a>
+{#                        <a href="https://demo.kairos.com/recognize/" target="_blank" class="list-group-item" style="background-color: #F7F7F7; border-right: none">Verify image recognition</a>#}
                         <a href="{% url 'subscriber:capture_image' %}" class="list-group-item" style="background-color: #F7F7F7; border-right: none">Add subscriber detail</a>
                     </div>
                 {% endif %}
