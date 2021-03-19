@@ -26,7 +26,7 @@ django-flat-responsive==1.4.1
 django-flat-theme==1.1.4
 django-progressive-web-app==0.1
 django-report-builder==3.5.0
-djangorestframework==3.6.3
+djangorestframework==3.11.2
 docutils==0.14
 et-xmlfile==1.0.1
 gunicorn==19.6.0
