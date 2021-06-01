@@ -68,7 +68,7 @@ sphinxcontrib-websupport==1.0.1
 static3==0.7.0
 tinycss==0.4
 tinycss2==0.5
-urllib3==1.22
+urllib3==1.26.5
 WeasyPrint==0.39
 webencodings==0.5.1
 Werkzeug==0.12.2
